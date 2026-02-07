@@ -29,11 +29,9 @@ Strict Constraints:
     Vocabulary: Use ONLY the words from the list I provide below.
     No English/Pinyin: Do not include English translations, Pinyin, or explanations. The entire response must be in Chinese characters only.
     Exceptions: If you must use a specific name (like a city or person) not on my list, you may write it in Chinese characters, as I will use Pleco to look it up.
-
-Other clarifications:
-
     Date Format: When including dates, use the format "年/月/日" (e.g., 2024/06/01).
     Location Format: When mentioning locations, simply state the name of the city or country in Chinese characters.
+    DO NOT SAY Argentina, Guatemala, Portland, or China in English. Use their Chinese names (阿根廷, 危地马拉, 波特兰, 中国).
     Introduction: Start the response with a greeting that includes my Chinese name (e.g., "你好, 石本城!").
     ALWAYS INCLUDE MY NAME, MY NAME IS 石本城.
 

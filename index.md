@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Cosas que me sirven para estudiar chino
 ## Apps
 - [Pleco](https://www.pleco.com/) - Diccionario de chino, con reconocimiento de caracteres, flashcards, etc.

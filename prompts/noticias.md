@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # prompt para noticias
 Este prompt está en inglés, cualquier cosa hablame por (discord)[esbendev.com/discord]
 Deberías reemplazar las palabras con las que estás estudiando vos.

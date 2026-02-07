@@ -1,0 +1,38 @@
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('pre').forEach((codeBlock) => {
+      const button = document.createElement('button');
+      button.className = 'copy-code-button';
+      button.type = 'button';
+      button.innerText = 'Copy';
+
+      button.addEventListener('click', () => {
+        const code = codeBlock.innerText;
+        window.navigator.clipboard.writeText(code).then(() => {
+          button.innerText = 'Copied!';
+          setTimeout(() => { button.innerText = 'Copy'; }, 2000);
+        });
+      });
+
+      codeBlock.style.position = 'relative';
+      codeBlock.appendChild(button);
+    });
+  });
+</script>
+
+<style>
+  .copy-code-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 4px 8px;
+    background: #f6f8fa;
+    border: 1px solid #d1d5da;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    z-index: 1;
+  }
+  .copy-code-button:hover { background: #eef1f4; }
+  pre { position: relative; }
+</style>

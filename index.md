@@ -5,4 +5,5 @@
 
 ## Prompts
 Lista de prompts que estoy usando
-- [noticias](prompts/noticias.md) - Para practicar vocabulario con noticias adaptadas a mi nivel
+- [noticias](prompts/noticias.md) - Para practicar vocabulario con noticias adaptadas a mi nivel.
+- [texto diario](prompts/texto-diario.md) - Versión mucho más completa del prompt para noticias.

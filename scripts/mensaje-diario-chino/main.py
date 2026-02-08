@@ -26,7 +26,10 @@ def read_response_from_file(filename="response.txt"):
     return None
 
 def send_prompt_to_api():
-    client = genai.Client()
+    api_key = os.environ.get("GOOGLE_AI_KEY")
+    if not api_key:
+        raise ValueError("GOOGLE_AI_KEY environment variable not set.")
+    client = genai.Client(api_key=api_key)
 
     response = client.models.generate_content(
         model="gemini-2.5-flash",

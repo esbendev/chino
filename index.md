@@ -13,3 +13,4 @@ Lista de prompts que estoy usando
 - [texto diario](prompts/texto-diario.md) - Versión mucho más completa del prompt para noticias.
 
 ## lista de textos diarios
+- [response_2026-02-08.txt](mensajes/response_2026-02-08.txt)

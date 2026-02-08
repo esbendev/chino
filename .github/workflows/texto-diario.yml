@@ -1,0 +1,32 @@
+name: Actualizo texto diario
+on:
+  schedule:
+    - cron: '14 0 * * *'  # Runs daily at midnight
+  workflow_dispatch:      # Allows you to run it manually for testing
+
+jobs:
+  run-and-push:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write    # Required to push changes back to the repo
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          
+      - name: Install dependencies
+        run: pip install -r scripts/mensaje-diario-chino/requirements.txt
+        
+      - name: Run AI Script
+        env:
+          GOOGLE_AI_KEY: ${{ secrets.GOOGLE_AI_KEY }} # Access your secret
+        run: python scripts/mensaje-diario-chino/main.py
+        
+      - name: Commit and Push
+        uses: stefanzweifel/git-auto-commit-action@v5 # Simplest way to push
+        with:
+          commit_message: "Agrego el archivo de hoy: $(date +'%Y-%m-%d') -esbenbot"
+          file_pattern: '*' 

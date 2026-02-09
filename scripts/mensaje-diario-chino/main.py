@@ -1,5 +1,5 @@
 import os
-from prompt import prompt
+from prompt import *
 from google import genai
 from google.genai import types
 from datetime import datetime
@@ -25,7 +25,9 @@ def read_response_from_file(filename="response.txt"):
         print(f"No file named {filename} found.")
     return None
 
-def send_prompt_to_api():
+def send_prompt_to_api(prompt_text):
+    if not prompt_text:
+        raise ValueError("Prompt text is empty. Please provide a valid prompt.")
     api_key = os.environ.get("GOOGLE_AI_KEY")
     if not api_key:
         raise ValueError("GOOGLE_AI_KEY environment variable not set.")
@@ -33,7 +35,7 @@ def send_prompt_to_api():
 
     response = client.models.generate_content(
         model="gemini-2.5-flash",
-        contents=prompt,
+        contents=prompt_text,
         config=types.GenerateContentConfig(
             tools=[types.Tool(google_search=types.GoogleSearch())]
         )
@@ -49,8 +51,12 @@ def main(read_from_file=False):
         else:
             print("No response to display.")
     else:
-        response = send_prompt_to_api()
+        
         todays_date = datetime.now().strftime("%Y-%m-%d")
+        tema = elegir_tema(datetime.now().weekday())
+        prompt_text = generar_prompt(todays_date, tema)
+        
+        response = send_prompt_to_api(prompt_text)
         path_archivo = f"mensajes/response_{todays_date}.txt"
         save_response_to_file(response, path_archivo)
         actualizar_index(path_archivo)

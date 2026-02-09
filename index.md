@@ -11,8 +11,8 @@ layout: default
 Lista de prompts que estoy usando
 - [noticias](prompts/noticias.md) - Para practicar vocabulario con noticias adaptadas a mi nivel.
 - [texto diario](prompts/texto-diario.md) - Versión mucho más completa del prompt para noticias.
+- [texto diario v2](prompts/texto-diario-v2.md) - Versión 2.0 del prompt para texto diario.
 
 ## lista de textos diarios
 - [response_2026-02-08.txt](mensajes/response_2026-02-08.txt)
-- [response_2026-02-09.txt](mensajes/response_2026-02-09.txt)
-- [response_2026-02-09.txt](mensajes/response_2026-02-09.txt)
+- [response_2026-02-09-VERSION-VIEJA.txt](mensajes/response_2026-02-09-VERSION-VIEJA.txt)

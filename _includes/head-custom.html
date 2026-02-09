@@ -1,5 +1,6 @@
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
+    // Add copy button to code blocks
     document.querySelectorAll('pre').forEach((codeBlock) => {
       const button = document.createElement('button');
       button.className = 'copy-code-button';
@@ -10,17 +11,73 @@
         const code = codeBlock.innerText;
         window.navigator.clipboard.writeText(code).then(() => {
           button.innerText = 'Copied!';
-          setTimeout(() => { button.innerText = 'Copy'; }, 2000);
+          setTimeout(() => {
+            button.innerText = 'Copy';
+          }, 2000);
         });
       });
 
       codeBlock.style.position = 'relative';
       codeBlock.appendChild(button);
     });
+
+    // Convert [!CAUTION] and similar syntax into styled admonitions
+    document.querySelectorAll('blockquote').forEach((block) => {
+      const text = block.innerText.trim();
+      const match = text.match(/^\[!(\w+)\](.*)/);
+      if (match) {
+        const type = match[1].toLowerCase();
+        const content = match[2].trim();
+
+        // Add a class to the blockquote based on the type
+        block.classList.add('admonition', `admonition-${type}`);
+
+        // Add a title to the block
+        const title = document.createElement('strong');
+        title.className = 'admonition-title';
+        title.innerText = type.charAt(0).toUpperCase() + type.slice(1).toLowerCase();
+        block.prepend(title);
+
+        // Replace the blockquote content with the parsed content
+        block.innerHTML = `<strong>${title.innerText}</strong>: ${content}`;
+      }
+    });
   });
 </script>
 
 <style>
+  /* Admonition styles */
+  .admonition {
+    border-left: 4px solid #d1d5da;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+    background-color: #f6f8fa;
+  }
+
+  .admonition-title {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  .admonition-caution {
+    border-color: #d73a49;
+    background-color: #f9d6d5;
+    color: #86181d;
+  }
+
+  .admonition-note {
+    border-color: #0366d6;
+    background-color: #dbe9ff;
+    color: #003366;
+  }
+
+  .admonition-tip {
+    border-color: #28a745;
+    background-color: #d4f8e8;
+    color: #155724;
+  }
+
   .copy-code-button {
     position: absolute;
     top: 0.5rem;

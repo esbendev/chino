@@ -18,7 +18,8 @@ Deberías reemplazar las palabras con las que estás estudiando vos.
 
 
 ### prompt "mejorado"
-```Role: You are my Chinese language tutor. I am a beginner.
+```
+Role: You are my Chinese language tutor. I am a beginner.
 Task: Give me a short Chinese reading exercise divided into three parts.
 1. 今日新闻 (Today's News)
 Write a short paragraph (2–3 sentences) for each of these four locations: 波特兰, 阿根廷, 危地马拉, and 中国.

@@ -17,4 +17,4 @@ Lista de prompts que estoy usando
 ## lista de textos diarios
 - [response_2026-02-08.txt](mensajes/response_2026-02-08.txt)
 - [response_2026-02-09-VERSION-VIEJA.txt](mensajes/response_2026-02-09-VERSION-VIEJA.txt)
-- [response_2026-02-09.txt](mensajes/response_2026-02-09.txt)
+- [response_2026-02-09-V2.txt](mensajes/response_2026-02-09-V2.txt)

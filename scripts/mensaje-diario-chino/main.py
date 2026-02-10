@@ -55,7 +55,7 @@ def main(read_from_file=False):
         todays_date = datetime.now().strftime("%Y-%m-%d")
         tema = elegir_tema(datetime.now().weekday())
         prompt_text = generar_prompt(todays_date, tema)
-        
+        print(f"Generated Prompt: {prompt_text}")
         response = send_prompt_to_api(prompt_text)
         path_archivo = f"mensajes/response_{todays_date}.txt"
         save_response_to_file(response, path_archivo)

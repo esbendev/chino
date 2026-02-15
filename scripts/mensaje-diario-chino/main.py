@@ -6,7 +6,7 @@ from datetime import datetime
 
 def actualizar_lista_mensajes(path_archivo):
     with open("mensajes.txt", "a", encoding="utf-8") as file:
-        file.write(f"{path_archivo}\n")
+        file.write(f"\n{path_archivo}")
         
 def actualizar_index(path_archivo):
     # to bottom of index.md, add a link to the latest response file

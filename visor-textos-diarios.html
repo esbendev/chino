@@ -11,7 +11,7 @@
     <select id="textSelector" onchange="loadText(this.value)">
         <option value="">Select a text</option>
     </select>
-    <button onclick="copyToClipboard()">Copy to Clipboard</button>
+    <!-- <button onclick="copyToClipboard()">Copy to Clipboard</button> -->
     <button onclick="openPleco()">Open Pleco</button>
 
     <script>
@@ -29,13 +29,9 @@
         }
 
         function openPleco() {
-            const text = document.getElementById('textDisplay').innerText;
-            if (text) {
-                const plecoUrl = `plecoapi://x-callback-url/s?q=${encodeURIComponent(text)}`;
-                window.open(plecoUrl, '_blank');
-            } else {
-                alert('No text to open in Pleco!');
-            }
+            copyToClipboard(); // Copy the text to clipboard first
+            const plecoUrl = `plecoapi://x-callback-url/reader`; // Open Pleco clipboard reader
+            window.open(plecoUrl, '_blank');
         }
 
         function loadText(filePath) {

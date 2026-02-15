@@ -1,35 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visor Textos Diarios</title>
 </head>
+
 <body>
     <select id="textSelector" onchange="loadText(this.value)">
         <option value="">Select a text</option>
     </select>
-
-    <div id="textDisplay" style="margin-top: 20px; white-space: pre-wrap; border: 1px solid #ccc; padding: 10px;"></div>
+    <button onclick="copyToClipboard()">Copy to Clipboard</button>
+    <button onclick="openPleco()">Open Pleco</button>
 
     <script>
+        function copyToClipboard() {
+            const text = document.getElementById('textDisplay').innerText;
+            if (text) {
+                navigator.clipboard.writeText(text).then(() => {
+                    alert('Text copied to clipboard!');
+                }).catch(err => {
+                    console.error('Error copying text:', err);
+                });
+            } else {
+                alert('No text to copy!');
+            }
+        }
+
+        function openPleco() {
+            const text = document.getElementById('textDisplay').innerText;
+            if (text) {
+                const plecoUrl = `plecoapi://x-callback-url/s?q=${encodeURIComponent(text)}`;
+                window.open(plecoUrl, '_blank');
+            } else {
+                alert('No text to open in Pleco!');
+            }
+        }
+
         function loadText(filePath) {
             if (!filePath) {
-                document.getElementById('textDisplay').innerText = '';
+                clearTextDisplay();
                 return;
             }
             fetch(filePath)
                 .then(response => response.text())
                 .then(data => {
-                    document.getElementById('textDisplay').innerText = data;
+                    displayText(data);
                 })
                 .catch(error => {
                     console.error('Error loading text:', error);
-                    document.getElementById('textDisplay').innerText = 'Error loading text.';
+                    displayText('Error loading text.');
                 });
         }
-        // Load the list of text files
-        
+
+        function fetchFileList() {
+            fetch('/mensajes.txt')
+                .then(response => response.text())
+                .then(data => {
+                    const files = parseFileList(data);
+                    populateTextSelector(files);
+                })
+                .catch(error => {
+                    console.error('Error fetching file list:', error);
+                });
+        }
+
+        function parseFileList(data) {
+            return data.split('\n').filter(file => file.trim() !== '').sort((a, b) => b.localeCompare(a));
+        }
+
+        function populateTextSelector(files) {
+            const textSelector = document.getElementById('textSelector');
+            files.forEach(file => {
+                const option = document.createElement('option');
+                option.value = file;
+                const nombreBonito = formatFileName(file);
+                option.textContent = nombreBonito;
+                textSelector.appendChild(option);
+            });
+            autoSelectMostRecentFile(textSelector);
+        }
+
+        function formatFileName(file) {
+            return file.replace('mensajes/', '').replace('response_', '').replace('.txt', '');
+        }
+
+        function autoSelectMostRecentFile(textSelector) {
+            if (textSelector.options.length > 1) {
+                textSelector.selectedIndex = 1; // Select the first file (most recent)
+                loadText(textSelector.value); // Load the selected file
+            }
+        }
+
+        function clearTextDisplay() {
+            document.getElementById('textDisplay').innerText = '';
+        }
+
+        function displayText(data) {
+            document.getElementById('textDisplay').innerText = data;
+        }
+
+        // Initialize the file list on page load
+        fetchFileList();
     </script>
+
+    <div id="textDisplay" style="margin-top: 20px; white-space: pre-wrap; border: 1px solid #ccc; padding: 10px;"></div>
 </body>
+
 </html>

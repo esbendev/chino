@@ -4,6 +4,10 @@ from google import genai
 from google.genai import types
 from datetime import datetime
 
+def actualizar_lista_mensajes(path_archivo):
+    with open("mensajes.txt", "a", encoding="utf-8") as file:
+        file.write(f"{path_archivo}\n")
+        
 def actualizar_index(path_archivo):
     # to bottom of index.md, add a link to the latest response file
     with open("index.md", "a", encoding="utf-8") as file:
@@ -60,6 +64,7 @@ def main(read_from_file=False):
         path_archivo = f"mensajes/response_{todays_date}.txt"
         save_response_to_file(response, path_archivo)
         actualizar_index(path_archivo)
+        actualizar_lista_mensajes(path_archivo)
 
 if __name__ == "__main__":
     read_from_file = False

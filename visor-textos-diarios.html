@@ -55,7 +55,7 @@
         }
 
         function fetchFileList() {
-            fetch('/mensajes.txt')
+            fetch('mensajes.txt')
                 .then(response => response.text())
                 .then(data => {
                     const files = parseFileList(data);

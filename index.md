@@ -23,3 +23,8 @@ Lista de prompts que estoy usando
 - [response_2026-02-08.txt](mensajes/response_2026-02-08.txt)
 - [response_2026-02-09-VERSION-VIEJA.txt](mensajes/response_2026-02-09-VERSION-VIEJA.txt)
 - [response_2026-02-09-V2.txt](mensajes/response_2026-02-09-V2.txt)
+- [response_2026-02-10.txt](mensajes/response_2026-02-10.txt)
+- [response_2026-02-11.txt](mensajes/response_2026-02-11.txt)
+- [response_2026-02-12.txt](mensajes/response_2026-02-12.txt)
+- [response_2026-02-13.txt](mensajes/response_2026-02-13.txt)
+- [response_2026-02-14.txt](mensajes/response_2026-02-14.txt)

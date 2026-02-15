@@ -28,5 +28,5 @@ jobs:
       - name: Commit and Push
         uses: stefanzweifel/git-auto-commit-action@v5 # Simplest way to push
         with:
-          commit_message: "Agrego el archivo de hoy: $(date +'%Y-%m-%d') -esbenbot"
+          commit_message: "Agrego el archivo de hoy -esbenbot"
           file_pattern: '*' 

@@ -7,6 +7,11 @@ layout: default
 - [Pleco](https://www.pleco.com/) - Diccionario de chino, con reconocimiento de caracteres, flashcards, etc.
 - [Anki](https://apps.ankiweb.net/) - App de flashcards
 
+## Cosas mías
+- [ayuda shuo (curso 1 y 2)](https://esbendev.com/shuo) - Cosas que uso para practicar lo que aprendí en este curso.
+- [zh-pdx](https://esbendev.com/zh-pdx) - lista con vocabulario visto en un grupo de conversación en chino.
+- [visor textos diarios](https://esbendev.com/chino/visor-textos-diarios) - leo lo del prompt de abajo todos los días usando esto.
+
 ## Prompts
 Lista de prompts que estoy usando
 - [noticias](prompts/noticias.md) - Para practicar vocabulario con noticias adaptadas a mi nivel.

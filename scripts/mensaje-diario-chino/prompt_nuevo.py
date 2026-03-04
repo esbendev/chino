@@ -11,10 +11,10 @@ Hard constraints:
    - You may also use: Chinese punctuation (，。；：？！、（）「」『』《》—…).
    - You may use Arabic numerals (0-9) and dates.
    - Do NOT use any other words.
-4) If a required concept cannot be expressed using the allowed vocabulary, replace it with [UNKNOWN] (do not invent).
+4) If a required concept cannot be expressed using the allowed vocabulary, replace it with english (do not invent).
 5) Do not add facts that are not in the source text.
-6) Output exactly ONE paragraph total (the greeting + the rewritten Chinese text all in one paragraph).
-7) Return ONLY the final paragraph. No title, no bullets, no explanations.
+6) Output exactly TWO paragraphs total (the greeting + the rewritten Chinese text all in one paragraph).
+7) Return ONLY the final paragraphs. No title, no bullets, no explanations.
 
 Date: {fecha}
 

@@ -1,5 +1,6 @@
 import os
-from prompt import *
+# from prompt import *
+from prompt_nuevo import *
 from google import genai
 from google.genai import types
 from datetime import datetime

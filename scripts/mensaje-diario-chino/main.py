@@ -3,6 +3,7 @@ from prompt import *
 from google import genai
 from google.genai import types
 from datetime import datetime
+import requests
 
 def actualizar_lista_mensajes(path_archivo):
     with open("mensajes.txt", "a", encoding="utf-8") as file:
@@ -28,6 +29,18 @@ def read_response_from_file(filename="response.txt"):
     else:
         print(f"No file named {filename} found.")
     return None
+
+def get_articulo():
+    today = datetime.now().strftime("%Y/%m/%d")
+    url = f"https://api.wikimedia.org/feed/v1/wikipedia/en/featured/{today}"  # endpoint format [web:1]
+
+    r = requests.get(url, headers={"User-Agent": "tfa-text-only/0.1 (contact: bsmith@scnctech.com)"}, timeout=30)  # UA recommended [web:1]
+    r.raise_for_status()
+    data = r.json()
+
+    # print(data["tfa"]["extract"])
+    return data["tfa"]["extract"]
+
 
 def send_prompt_to_api(prompt_text):
     if not prompt_text:
@@ -57,8 +70,10 @@ def main(read_from_file=False):
     else:
         
         todays_date = datetime.now().strftime("%Y-%m-%d")
-        tema = elegir_tema(datetime.now().weekday())
-        prompt_text = generar_prompt(todays_date, tema)
+        # tema = elegir_tema(datetime.now().weekday())
+        articulo = get_articulo()
+        # prompt_text = generar_prompt(todays_date, tema)
+        prompt_text = generar_prompt_nuevo(todays_date, articulo)
         print(f"Generated Prompt: {prompt_text}")
         response = send_prompt_to_api(prompt_text)
         path_archivo = f"mensajes/response_{todays_date}.txt"

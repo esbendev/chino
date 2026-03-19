@@ -18,6 +18,7 @@ Lista de prompts que estoy usando
 - [texto diario](prompts/texto-diario.md) - Versión mucho más completa del prompt para noticias.
 - [texto diario v2](prompts/texto-diario-v2.md) - Versión 2.0 del prompt para texto diario.
 - [texto diario v3](prompts/texto-diario-v3.md) - Versión 3.0 del prompt para texto diario, con algunos cambios para intentar evitar que me tire cosas en inglés.
+- [artículo de wikipedia](prompts/prompt-articulo-wikipedia.md) - Para practicar con artículos de wikipedia, con un vocabulario limitado. Es el que uso para generar los textos diarios de ahora.
 
 ## lista de textos diarios
 - [response_2026-02-08.txt](mensajes/response_2026-02-08.txt)

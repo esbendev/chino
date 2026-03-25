@@ -2,29 +2,29 @@
 layout: default
 ---
 
-[ENGLISH VERSION HERE](index-en.md)
+[VERSIÓN EN ESPAÑOL AQUÍ](index.md)
 
-# Cosas que me sirven para estudiar chino
-Hecho con ☕ por [@esbendev](https://esbendev.com/index-en.html)
-¿Quieres apoyar lo que hago? [¡Cómprame un café!](https://ko-fi.com/esbendev) :)
+# Things that help me study Chinese
+Made with ☕ by [@esbendev](https://esbendev.com/index-en.html)
+Wanna support me? [Buy me a coffee!](https://ko-fi.com/esbendev) :)
 ## Apps
-- [Pleco](https://www.pleco.com/) - Diccionario de chino, con reconocimiento de caracteres, flashcards, etc.
-- [Anki](https://apps.ankiweb.net/) - App de flashcards
+- [Pleco](https://www.pleco.com/) - Chinese dictionary with character recognition, flashcards, etc.
+- [Anki](https://apps.ankiweb.net/) - Flashcard app
 
-## Cosas mías
-- [ayuda shuo (curso 1 y 2)](https://esbendev.com/shuo) - Cosas que uso para practicar lo que aprendí en este curso.
-- [zh-pdx](https://esbendev.com/zh-pdx) - lista con vocabulario visto en un grupo de conversación en chino.
-- [visor textos diarios](https://esbendev.com/chino/visor-textos-diarios) - leo lo del prompt de abajo todos los días usando esto.
+## My resources
+- [ayuda shuo (course 1 and 2)](https://esbendev.com/shuo) - Materials I use to practice what I learned in these courses.
+- [zh-pdx](https://esbendev.com/zh-pdx) - Vocabulary list from a Chinese conversation group.
+- [daily texts viewer](https://esbendev.com/chino/visor-textos-diarios) - I read the prompt below daily using this tool.
 
 ## Prompts
-Lista de prompts que estoy usando
-- [noticias](prompts/noticias.md) - Para practicar vocabulario con noticias adaptadas a mi nivel.
-- [texto diario](prompts/texto-diario.md) - Versión mucho más completa del prompt para noticias.
-- [texto diario v2](prompts/texto-diario-v2.md) - Versión 2.0 del prompt para texto diario.
-- [texto diario v3](prompts/texto-diario-v3.md) - Versión 3.0 del prompt para texto diario, con algunos cambios para intentar evitar que me tire cosas en inglés.
-- [artículo de wikipedia](prompts/prompt-articulo-wikipedia.md) - Para practicar con artículos de wikipedia, con un vocabulario limitado. Es el que uso para generar los textos diarios de ahora.
+List of prompts I'm using
+- [news](prompts/noticias.md) - Practice vocabulary with news adapted to my level.
+- [daily text](prompts/texto-diario.md) - More complete version of the news prompt.
+- [daily text v2](prompts/texto-diario-v2.md) - Version 2.0 of the daily text prompt.
+- [daily text v3](prompts/texto-diario-v3.md) - Version 3.0 of the daily text prompt with changes to reduce English content.
+- [wikipedia article](prompts/prompt-articulo-wikipedia.md) - Practice with Wikipedia articles using limited vocabulary. I use this for generating current daily texts.
 
-## lista de textos diarios
+## Daily texts list
 - [response_2026-02-08.txt](mensajes/response_2026-02-08.txt)
 - [response_2026-02-09-VERSION-VIEJA.txt](mensajes/response_2026-02-09-VERSION-VIEJA.txt)
 - [response_2026-02-09-V2.txt](mensajes/response_2026-02-09-V2.txt)

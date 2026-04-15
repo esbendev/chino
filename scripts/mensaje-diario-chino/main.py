@@ -53,7 +53,8 @@ def send_prompt_to_api(prompt_text):
     client = genai.Client(api_key=api_key)
 
     response = client.models.generate_content(
-        model="gemini-3-flash-preview",
+        # model="gemini-3-flash-preview",
+        model="gemini-3.1-flash-lite-preview",
         # model="gemini-2.5-flash",
         contents=prompt_text,
         config=types.GenerateContentConfig(

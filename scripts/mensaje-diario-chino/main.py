@@ -54,12 +54,12 @@ def send_prompt_to_api(prompt_text):
 
     response = client.models.generate_content(
         # model="gemini-3-flash-preview",
-        model="gemini-3.1-flash-lite-preview",
-        # model="gemini-2.5-flash",
+        # model="gemini-3.1-flash-lite-preview",
+        model="gemini-2.5-flash",
         contents=prompt_text,
-        config=types.GenerateContentConfig(
-            tools=[types.Tool(google_search=types.GoogleSearch())]
-        )
+        # config=types.GenerateContentConfig(
+        #     tools=[types.Tool(google_search=types.GoogleSearch())]
+        # )
     )
     return response
     # print(response.text)

@@ -1,6 +1,7 @@
 import os
 # from prompt import *
-from prompt_nuevo import *
+# from prompt_nuevo import *
+from prompt_nuevo_abril_15_2026 import *
 from google import genai
 from google.genai import types
 from datetime import datetime
@@ -52,7 +53,8 @@ def send_prompt_to_api(prompt_text):
     client = genai.Client(api_key=api_key)
 
     response = client.models.generate_content(
-        model="gemini-2.5-flash",
+        model="gemini-3-flash-preview",
+        # model="gemini-2.5-flash",
         contents=prompt_text,
         config=types.GenerateContentConfig(
             tools=[types.Tool(google_search=types.GoogleSearch())]

@@ -1,7 +1,7 @@
 name: Actualizo texto diario
 on:
   schedule:
-    - cron: '0 14 * * *'  # Runs daily at midnight
+    - cron: '0 10 * * *'  # Runs daily at 3am Pacific
   workflow_dispatch:      # Allows you to run it manually for testing
 
 jobs:

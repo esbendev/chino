@@ -113,3 +113,4 @@ Lista de prompts que estoy usando
 - [response_2026-05-22.txt](mensajes/response_2026-05-22.txt)
 - [response_2026-05-23.txt](mensajes/response_2026-05-23.txt)
 - [response_2026-05-24.txt](mensajes/response_2026-05-24.txt)
+- [response_2026-05-27.txt](mensajes/response_2026-05-27.txt)
